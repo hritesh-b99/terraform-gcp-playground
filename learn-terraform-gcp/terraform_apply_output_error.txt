@@ -1,0 +1,36 @@
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # google_compute_network.vpc_network will be created
+  + resource "google_compute_network" "vpc_network" {
+      + auto_create_subnetworks         = true
+      + delete_default_routes_on_create = false
+      + gateway_ipv4                    = (known after apply)
+      + id                              = (known after apply)
+      + internal_ipv6_range             = (known after apply)
+      + mtu                             = (known after apply)
+      + name                            = "terraform-network"
+      + project                         = (known after apply)
+      + routing_mode                    = (known after apply)
+      + self_link                       = (known after apply)
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+google_compute_network.vpc_network: Creating...
+╷
+│ Error: Error creating Network: googleapi: Error 403: Required 'compute.networks.create' permission for 'projects/terraform-karthik-test/global/networks/terraform-network', forbidden
+│ 
+│   with google_compute_network.vpc_network,
+│   on main.tf line 18, in resource "google_compute_network" "vpc_network":
+│   18: resource "google_compute_network" "vpc_network" {
